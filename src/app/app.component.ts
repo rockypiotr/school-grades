@@ -1,13 +1,10 @@
-import {Component} from '@angular/core';
-import {
-  GradingDashboardComponent
-} from "./page/grading-system/components/grading-dashboard/grading-dashboard.component";
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  imports: [GradingDashboardComponent],
+  imports: [],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'school-grades';
