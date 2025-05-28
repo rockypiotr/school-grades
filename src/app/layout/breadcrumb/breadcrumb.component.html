@@ -1,0 +1,4 @@
+<nav aria-label="breadcrumb">
+  @let title = (activatedRoute.firstChild?.data | async)?.['title'];
+  <span class="breadcrumb-item">{{ title }}</span>
+</nav>

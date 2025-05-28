@@ -1,0 +1,110 @@
+.app-container {
+  height: 100vh;
+}
+
+.app-sidenav {
+  width: 100px;
+  padding: 16px;
+  background-color: #2d952d;
+}
+
+.mat-mdc-icon-button[aria-label="Go back"] {
+  background-color: #c4ee90;
+  color: black;
+}
+
+.mat-mdc-icon-button[aria-label="Toggle sidenav"] {
+  background-color: #2d952d;
+  color: white;
+}
+
+.mat-toolbar {
+  background: #fff;
+  color: black;
+}
+
+.avatar-section {
+  text-align: center;
+}
+
+.avatar-image {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+.vertical-menu-item {
+  display: flex;
+  align-items: center;
+  column-gap: 0;
+  flex-direction: column;
+  border-left: 4px solid transparent;
+}
+
+.active-link.mdc-list-item {
+  background-color: rgba(84, 195, 89, 0.24);
+  border-left: 4px solid lightgreen;
+}
+
+.mat-mdc-nav-list .mat-mdc-list-item {
+  border-radius: 0;
+}
+
+.mdc-list {
+  padding: 0;
+}
+
+.mdc-list-item {
+  background-color: var(--mdc-list-list-item-container-color, transparent)
+}
+
+.mdc-list-item.mdc-list-item--with-one-line {
+  height: auto;
+}
+
+.mdc-list-item--with-leading-icon.mdc-list-item {
+  padding: 15px 0;
+}
+
+.mdc-list-item--with-leading-icon .mdc-list-item__start {
+  width: auto;
+  height: auto;
+}
+
+.mat-mdc-list-item-icon {
+  font-size: 35px;
+}
+
+.mdc-list-item__primary-text {
+  font-size: 12px;
+}
+
+.mat-drawer {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 16px 0 0 0;
+}
+
+.mat-nav-list .mat-list-item {
+  margin-bottom: 8px;
+}
+
+.mat-nav-list .active-link {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.app-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.main-content-area {
+  padding: 20px;
+}

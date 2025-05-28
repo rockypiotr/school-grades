@@ -1,0 +1,34 @@
+<mat-sidenav-container class="app-container">
+  <!-- Sidenav -->
+  <mat-sidenav class="app-sidenav" mode="side" opened>
+    <div class="avatar-section">
+      <img [height]="80" [width]="80" alt="User Avatar" class="avatar-image" ngSrc="/assets/avatar.png">
+    </div>
+    <mat-nav-list>
+      @for (menuItem of menus; track menuItem.title) {
+        <a mat-list-item [routerLink]="menuItem.route" routerLinkActive="active-link" class="vertical-menu-item">
+          <mat-icon matListItemIcon>{{ menuItem.icon }}</mat-icon>
+          <span matListItemTitle>{{ menuItem.title }}</span>
+        </a>
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main Content -->
+  <mat-sidenav-content class="app-sidenav-content">
+    <mat-toolbar class="app-toolbar" color="primary">
+      <button aria-label="Go back" mat-icon-button>
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <app-breadcrumb></app-breadcrumb>
+      <span class="toolbar-spacer"></span>
+      <button aria-label="Toggle sidenav" mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <main class="main-content-area">
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
