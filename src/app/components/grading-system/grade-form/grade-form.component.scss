@@ -1,0 +1,57 @@
+.container {
+  padding: 16px;
+}
+
+.mat-mdc-text-field-wrapper {
+  background-color: transparent;
+}
+
+.range-display {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 16px;
+  padding: 8px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+
+//
+
+.grade-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.form-field {
+  flex: 1;
+}
+
+.half-width {
+  flex: 0 0 calc(50% - 8px);
+}
+
+.full-width {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .half-width {
+    flex: 0 0 100%;
+  }
+}

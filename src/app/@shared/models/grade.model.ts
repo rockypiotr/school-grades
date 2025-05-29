@@ -27,3 +27,7 @@ export interface ConflictResponse {
   errorMessage: string;
   errorData?: Record<string, any>;
 }
+
+export interface DisplayGrade extends Grade {
+  maxPercentage: number;
+}

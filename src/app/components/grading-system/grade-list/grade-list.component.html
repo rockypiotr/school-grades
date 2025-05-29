@@ -1,0 +1,21 @@
+@if (grades().length > 0) {
+  <mat-list class="grade-list">
+    @for (grade of grades(); track grade.id) {
+      <mat-list-item matRipple class="grade-item" (click)="selectGrade.emit(grade)">
+        <span matListItemTitle class="grade-symbol">{{ grade.symbolicGrade }}</span>
+        <span matListItemLine class="grade-range">{{ grade.minPercentage }}% - {{ grade.maxPercentage }}%</span>
+        <button mat-icon-button class="delete-button" aria-label="Delete grade" (click)="removeItem($event, grade.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+    }
+  </mat-list>
+} @else {
+  <p class="empty-message">There is no grades</p>
+}
+<div class="add-grade-button-container">
+  <button (click)="addGrade.emit()" mat-button>
+    <mat-icon>add</mat-icon>
+    ADD NEW GRADE
+  </button>
+</div>

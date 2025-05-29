@@ -56,8 +56,12 @@
   padding: 0;
 }
 
+.mdc-list-item--with-leading-icon .mdc-list-item__start, .mdc-list-item__primary-text {
+  color: #fff;
+}
+
 .mdc-list-item {
-  background-color: var(--mdc-list-list-item-container-color, transparent)
+  background-color: var(--mdc-list-list-item-container-color, transparent);
 }
 
 .mdc-list-item.mdc-list-item--with-one-line {
@@ -106,5 +110,12 @@
 }
 
 .main-content-area {
-  padding: 20px;
+  flex-grow: 1;
+}
+
+
+.app-sidenav-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }

@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
-import { HomeComponent } from './pages/home/home.component';
-import { GradingDashboardComponent } from './pages/grading-system/grading-dashboard.component';
+import { GradingSystemComponent } from './components/grading-system/grading-system.component';
+import { HomeComponent } from './components/home/home.component';
 
 export const routes: Routes = [
   {
@@ -20,7 +20,7 @@ export const routes: Routes = [
       },
       {
         path: 'configuration',
-        component: GradingDashboardComponent,
+        component: GradingSystemComponent,
         data: { title: 'Grading system' },
       },
     ],

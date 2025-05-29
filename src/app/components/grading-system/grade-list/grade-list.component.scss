@@ -1,0 +1,48 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.add-grade-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.grade-list {
+  padding: 10px;
+}
+
+.grade-item {
+  margin-bottom: 8px;
+  border-radius: 16px;
+  transition: background-color 0.2s ease-in-out;
+  padding: 8px 16px;
+  color: black;
+  cursor: pointer;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: #eef;
+    border: 1px solid #a5a5ac;
+  }
+
+  .delete-button {
+    margin-left: auto;
+    color: grey;
+  }
+
+  .grade-symbol {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .grade-range {
+    color: #555;
+  }
+}
+
+.empty-message {
+  text-align: center;
+  color: #777;
+  padding: 20px;
+}

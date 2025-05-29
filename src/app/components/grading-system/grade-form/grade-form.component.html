@@ -1,0 +1,75 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="gradeForm">
+    <div class="form-row">
+      <mat-form-field class="form-field half-width">
+        @let minPercentage = gradeForm.get('minPercentage');
+        <mat-label>Percent from</mat-label>
+        <span matTextPrefix>+1 &nbsp;</span>
+        <input
+          formControlName="minPercentage"
+          matInput
+          max="100"
+          min="0"
+          required
+          type="number"
+        >
+        <span matTextSuffix>%</span>
+        @if (minPercentage?.touched) {
+          @if (minPercentage?.hasError('required')) {
+            <mat-error>Minimum percentage is required.</mat-error>
+          }
+          @if (minPercentage?.hasError('min') || minPercentage?.hasError('max')) {
+            <mat-error>Percentage must be between 0 and 100.</mat-error>
+          }
+        }
+      </mat-form-field>
+
+      <mat-form-field class="form-field half-width">
+        @let maxPercentage = gradeForm.get('maxPercentage');
+        <mat-label>Percent To</mat-label>
+        <input
+          formControlName="maxPercentage"
+          matInput
+          type="number"
+        >
+        <span matTextSuffix>%</span>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field class="form-field half-width">
+        @let symbolicGrade = gradeForm.get('symbolicGrade');
+        <mat-label>Grade</mat-label>
+        <input
+          formControlName="symbolicGrade"
+          matInput
+          required
+        >
+        @if (symbolicGrade?.touched && symbolicGrade?.hasError('required')) {
+          <mat-error>Grade name is required.</mat-error>
+        }
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field class="form-field half-width">
+        <mat-label>Grade Description</mat-label>
+        <textarea
+          cdkAutosizeMaxRows="5"
+          cdkAutosizeMinRows="2"
+          cdkTextareaAutosize
+          formControlName="descriptiveGrade"
+          matInput
+        ></textarea>
+      </mat-form-field>
+    </div>
+
+    <div class="form-actions">
+      <button (click)="cancel.emit()" mat-stroked-button type="button">Cancel</button>
+      <button [disabled]="gradeForm.invalid" color="primary" mat-raised-button type="submit">
+        {{ currentGrade() ? 'Save Changes' : 'Create Grade' }}
+      </button>
+    </div>
+  </form>
+
+</div>

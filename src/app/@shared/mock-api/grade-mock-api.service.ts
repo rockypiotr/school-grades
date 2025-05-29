@@ -150,22 +150,32 @@ export class GradeMockApiService implements InMemoryDbService {
     const collectionName = reqInfo.collectionName;
     if (collectionName === 'grades') {
       const id = reqInfo.id;
-      const initialLength = this.grades.length;
-      this.grades = this.grades.filter((grade) => grade.id !== id);
+      const collection = reqInfo.collection as Grade[];
 
-      if (this.grades.length === initialLength) {
+      const gradeIndex = collection.findIndex((grade) => grade.id === id);
+
+      if (gradeIndex === -1) {
         return reqInfo.utils.createResponse$(() => ({
+          body: { error: `Grade with id='${id}' not found in collection` },
           status: STATUS.NOT_FOUND,
           headers: reqInfo.headers,
           url: reqInfo.url,
         }));
       }
+
+      collection.splice(gradeIndex, 1);
+
       return reqInfo.utils.createResponse$(() => ({
         status: STATUS.NO_CONTENT,
         headers: reqInfo.headers,
         url: reqInfo.url,
       }));
     }
-    return of(undefined);
+    return reqInfo.utils.createResponse$(() => ({
+      body: { error: `Collection '${collectionName}' not found` },
+      status: STATUS.NOT_FOUND,
+      headers: reqInfo.headers,
+      url: reqInfo.url,
+    }));
   }
 }

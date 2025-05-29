@@ -1,4 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@use '@angular/material' as mat;
+
+
+:root {
+  color-scheme: light;
+  @include mat.theme((
+          color: mat.$green-palette,
+          typography: Roboto,
+          density: 0
+  ));
+  --mat-sys-surface-variant: transparent;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.grade-list {
+  .mdc-list-item__content {
+    display: flex;
+    align-items: center;
+  }
+
+  .mdc-list-item__primary-text {
+    margin-left: auto;
+  }
+}
+
+.mdc-text-field--filled {
+  background-color: transparent !important;
+}

@@ -1,0 +1,29 @@
+<div class="grading-system-container">
+  <div class="content-wrapper">
+    <div class="list-panel">
+      <app-grade-list
+        (addGrade)="onAddNewGrade()"
+        (deleteGrade)="onDeleteGrade($event)"
+        (selectGrade)="onSelectGrade($event)"
+        [grades]="sortedDisplayGrades()"
+      />
+    </div>
+
+    <div class="form-panel">
+      @if (isFormVisible()) {
+        <app-grade-form
+          [currentGrade]="selectedGradeForForm()"
+          [currentGradeMaxPercentage]="selectedGradeMaxPercentageForForm()"
+          (save)="onSaveGrade($event)"
+          (cancel)="onCancelForm()"
+        />
+      }
+    </div>
+  </div>
+
+  @if (isLoading()) {
+    <div class="loading-overlay">
+      <mat-progress-spinner mode="indeterminate" diameter="50"></mat-progress-spinner>
+    </div>
+  }
+</div>

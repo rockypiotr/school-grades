@@ -5,6 +5,7 @@ import { AsyncPipe } from '@angular/common';
 @Component({
   selector: 'app-breadcrumb',
   imports: [AsyncPipe],
+  standalone: true,
   templateUrl: './breadcrumb.component.html',
   styleUrl: './breadcrumb.component.scss',
 })
